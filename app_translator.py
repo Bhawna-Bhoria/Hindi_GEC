@@ -29,7 +29,7 @@ def main():
     if st.button("Translate"):
         if input_text:
             translated_text = translate_hindi_to_french(input_text)
-            st.success("Translated Text (French):")
+            st.success("Corrected Text (Hindi):")
             st.text(translated_text)
         else:
             st.warning("Please enter some text to translate.")
