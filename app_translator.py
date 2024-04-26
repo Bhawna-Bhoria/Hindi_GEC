@@ -1,7 +1,7 @@
 import streamlit as st
 from transformers import MBartForConditionalGeneration, MBart50TokenizerFast
 
-st.title("Hindi to French Translator")
+st.title("Hindi Grammar Error Correction App")
 
 # Load MBart model and tokenizer
 model = MBartForConditionalGeneration.from_pretrained("facebook/mbart-large-50-many-to-many-mmt")
@@ -15,7 +15,7 @@ def translate_hindi_to_french(input_text):
     # Generate translation
     generated_tokens = model.generate(
         **encoded_input,
-        forced_bos_token_id=tokenizer.lang_code_to_id["fr_XX"]  # Target language French
+        forced_bos_token_id=tokenizer.lang_code_to_id["hi_IN"]  # Target language French
     )
     
     # Decode and return translated text
@@ -32,4 +32,4 @@ if st.button("Translate"):
         st.success("Translated Text (French):")
         st.text(translated_text)
     else:
-        st.warning("Please enter some text to translate.")
+        st.warning("Please enter some hindi text to correct it.")
