@@ -3,3 +3,5 @@ streamlit
 transformers
 torch
 sentencepiece
+transformers.MBartForConditionalGeneration
+transformers.MBart50TokenizerFast
